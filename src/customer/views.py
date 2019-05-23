@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from customer.models import Customer
 import json
 from django.core import serializers
+from src.serialization import Serializer
 from smtpd import DebuggingServer
 
 
@@ -23,17 +24,12 @@ def getCust(request):
 
    
 def customer_Detail(request):
-        
-        
+
         if request.method == 'GET':
                 cus = []
-                customer = Customer.objects.all()
-                print(customer)
-                for c in customer:
-                        serial = serializers.serialize('json',[c])
+                for c in Customer.objects.all():
+                        serial = Serializer.makeSerialize(request,'json',c)
                         cus.append(serial)
-                # serialObj = serializers.serialize('json',[cus])
-                print(cus)
                 return HttpResponse(cus)
         
 
