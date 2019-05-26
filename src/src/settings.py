@@ -65,7 +65,7 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/benseron-16/Restaurent/Django/src/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
