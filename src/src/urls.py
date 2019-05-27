@@ -19,6 +19,6 @@ from customer import views
 
 urlpatterns = [
     path('', views.welcome_view, name='home'),
-    path('demo', views.customer_Detail),
+    path('demo', views.signUpCustomer),
     path('admin/', admin.site.urls),
 ]
