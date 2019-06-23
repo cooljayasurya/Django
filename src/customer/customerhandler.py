@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-import json
 from rest_framework.parsers import JSONParser
 
 
