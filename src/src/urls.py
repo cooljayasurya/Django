@@ -16,11 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from customer import views
-from ..controller.Router import Router
+from controller.Router import Router
 
 urlpatterns = [
     path('', views.welcome_view, name='home'),
     path('demo', views.signUpCustomer),
-    path('admin/', admin.site.urls),
-    path('', Router.routerConfig)
+    path('admin/', admin.site.urls)
 ]
