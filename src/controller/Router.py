@@ -1,12 +1,16 @@
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from turtle import switchpen
+import requests
 
 class Router:
     
-    csrf_exempt
+    def __init__(self, request):
+        self.request = request
+    
+    
     def routerConfig(self):
-        print(self)
-        return HttpResponse({'message': "LoginSuccessFully"})
-        
+        print(dir(self))
+        if self.method == "POST":
+            return HttpResponse({"POST call......."})
+        return HttpResponse({"LoginSuccessFully"})
     
